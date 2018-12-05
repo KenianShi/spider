@@ -1,6 +1,7 @@
 package model
 
 type Profile struct{
+	Name 			string
 	Marriage		string
 	Age 			string
 	Constellation	string

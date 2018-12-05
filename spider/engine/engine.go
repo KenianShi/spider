@@ -13,7 +13,7 @@ func Run(seeds ...Request) {
 	for len(requests) > 0 {
 		req := requests[0]
 		requests = requests[1:]
-		contents, err := fetcher.Fetch(req.Url)
+		contents, err := fetcher.ClientFetch(req.Url)
 		if err != nil {
 			log.Println("err:", err)
 			continue
@@ -23,6 +23,5 @@ func Run(seeds ...Request) {
 		for _, item := range parseresult.Items {
 			log.Printf("%v", item)
 		}
-
 	}
 }
